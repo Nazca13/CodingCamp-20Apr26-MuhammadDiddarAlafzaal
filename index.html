@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeFlow | Responsive Bento Dashboard</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <audio id="alarm-sound" src="assets/alarm.mp3" preload="auto" loop></audio>
+
+    <div id="timer-modal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-icon"><i class="fas fa-bell"></i></div>
+            <h2>Waktu Fokus Selesai!</h2>
+            <p>Sesi pomodoro berakhir. Matikan alarm dan ambil nafas sejenak.</p>
+            <button id="close-modal-btn" class="btn-modal">Matikan Alarm</button>
+        </div>
+    </div>
+
+    <div class="app-wrapper">
+        <header class="navbar">
+            <div class="brand">
+                <div class="brand-box"><i class="fas fa-bolt"></i></div>
+                <span class="brand-name">LifeFlow</span>
+            </div>
+            <div class="navbar-actions">
+                <button id="theme-toggle" class="btn-icon"><i class="fas fa-moon"></i></button>
+                <div class="profile-chip">
+                    <div class="profile-meta">
+                        <strong id="top-user-name">Nazca</strong>
+                    </div>
+                    <img id="top-avatar" src="https://ui-avatars.com/api/?name=Nazca&background=1e2030&color=fff" alt="User">
+                </div>
+            </div>
+        </header>
+
+        <main class="grid-container">
+            <section class="card hero-banner">
+                <div class="hero-content">
+                    <h1 id="greeting-text">Good Day, Nazca</h1>
+                    <p>Kelola tugas harianmu dengan desain bento yang presisi.</p>
+                    <button id="btn-edit-name" class="btn-outline">Ubah Nama</button>
+                </div>
+                <div class="hero-visual">
+                    <div id="clock-display">00:00:00</div>
+                    <div id="date-display">Loading...</div>
+                </div>
+            </section>
+
+            <section class="card bento-timer">
+                <div class="card-header">
+                    <h3>Focus Timer</h3>
+                    <i class="fas fa-hourglass-half"></i>
+                </div>
+                <div id="timer-text">25:00</div>
+                <div class="timer-buttons">
+                    <button id="timer-start" class="btn-round"><i class="fas fa-play"></i></button>
+                    <button id="timer-pause" class="btn-round"><i class="fas fa-pause"></i></button>
+                    <button id="timer-reset" class="btn-round"><i class="fas fa-redo"></i></button>
+                </div>
+                <div class="timer-config">
+                    <input type="number" id="timer-input" placeholder="Min" min="1">
+                    <button id="btn-set-timer">Set</button>
+                </div>
+            </section>
+
+            <section class="card bento-stats">
+                <div class="card-header">
+                    <h3>Progress</h3>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <span id="stat-total">0</span>
+                        <p>Total</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span id="stat-done">0</span>
+                        <p>Selesai</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card bento-todo">
+                <div class="card-header">
+                    <h3>Tasks List</h3>
+                    <select id="task-sort">
+                        <option value="new">Terbaru</option>
+                        <option value="alpha">A - Z</option>
+                        <option value="status">Status</option>
+                    </select>
+                </div>
+                <div class="todo-input-group">
+                    <input type="text" id="todo-input" placeholder="Apa rencanamu?">
+                    <button id="btn-add-todo"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="table-wrapper">
+                    <table class="modern-table">
+                        <thead>
+                            <tr>
+                                <th width="40px">Selesai</th>
+                                <th>Deskripsi Tugas</th>
+                                <th width="60px">Hapus</th>
+                            </tr>
+                        </thead>
+                        <tbody id="todo-list"></tbody>
+                    </table>
+                    <div id="todo-empty" class="empty-msg">Belum ada tugas hari ini.</div>
+                </div>
+            </section>
+
+            <section class="card bento-links">
+                <div class="card-header">
+                    <h3>Quick Links</h3>
+                    <i class="fas fa-link"></i>
+                </div>
+                <div class="links-form">
+                    <input type="text" id="link-name" placeholder="Nama Web">
+                    <input type="url" id="link-url" placeholder="URL">
+                    <button id="btn-add-link">Simpan Link</button>
+                </div>
+                <div id="links-container" class="links-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
