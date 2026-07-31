@@ -2,12 +2,21 @@
 :root {
   --bg: #f0faf4;
   --card: #ffffff;
+<<<<<<< HEAD
   --navy: #1a4731;
   --accent: #2e7d52;
   --text: #1b3a2d;
   --text-light: #5a7a68;
   --border: #d4eddd;
   --shadow: 0 10px 30px rgba(46, 125, 82, 0.08);
+=======
+  --navy: #1e2030;
+  --accent: #4e54c8;
+  --text: #2d3436;
+  --text-light: #454d4f;
+  --border: #eef2f6;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+>>>>>>> e637da0ca69b28068f557df7bd0c0c076e572681
 }
 
 body.dark-mode {

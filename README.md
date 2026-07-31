@@ -177,4 +177,8 @@ This project is open source and available for educational purposes.
 
 ---
 
+<<<<<<< HEAD
 **Built with ❤️ as part of the Coding Camp course**# CodingCamp-27July26-muhammaddiddaralafzaal
+=======
+**Built with ❤️ as part of the Coding Camp course**# CodingCamp-04May26-Muhammad-Diddar-Al-Afzaal
+>>>>>>> e637da0ca69b28068f557df7bd0c0c076e572681
